@@ -1,6 +1,7 @@
 import { IPost } from '../../interfaces/IPost';
 import { Post } from '../Post';
 import { PostComposer } from '../PostComposer';
+import { Virtuoso } from 'react-virtuoso';
 
 interface FeedProps {
   posts?: IPost[];
@@ -9,15 +10,21 @@ interface FeedProps {
 
 export const Feed = ({ posts, showPostComposer }: FeedProps) => {
   return (
-    <div className="divide-y divide-gray-100 p-4">
-      {showPostComposer && (
-        <div className="pb-4">
-          <PostComposer />
-        </div>
-      )}
-      {posts?.map(post => (
-        <Post key={post.id} post={post} />
-      ))}
+    <div className="flex flex-col px-4 h-full">
+      <Virtuoso
+        data={posts}
+        style={{ flex: 1 }}
+        className="scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-transparent"
+        itemContent={(index, post) => (
+          <Post key={post.id} post={post} className="pr-2 border-b" />
+        )}
+        components={{
+          Header: () => {
+            if (!showPostComposer) return null;
+            return <PostComposer className="pr-2 border-b pb-4 pt-20" />;
+          },
+        }}
+      />
     </div>
   );
 };

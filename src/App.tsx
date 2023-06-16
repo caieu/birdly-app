@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import { NavBar } from './components/NavBar';
 import { HomePage } from './pages/HomePage';
 import { UserPage } from './pages/UserPage';
 import { initializePostsData } from './redux/features/posts';
@@ -25,7 +24,6 @@ function App() {
 
   return (
     <div className="bg-gray-900 h-screen">
-      <NavBar />
       <Routes location={state?.backgroundLocation || location}>
         <Route path="/" element={<HomePage />}>
           <Route path="/users/:userName" element={<UserPage />}></Route>

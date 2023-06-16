@@ -7,6 +7,7 @@ import { useAppDispatch } from '../../redux/hooks';
 import { createPost } from '../../redux/features/posts';
 import { PostType } from '../../interfaces/IPost';
 import { TextArea } from '../TextArea';
+import clsx from 'clsx';
 
 export const POST_CHARACTER_LIMIT = 777;
 
@@ -15,6 +16,7 @@ interface PostComposerProps {
   postReferenceId?: string;
   onCreatePost?: () => void;
   rows?: number;
+  className?: string;
 }
 
 export const PostComposer = ({
@@ -22,6 +24,7 @@ export const PostComposer = ({
   postReferenceId,
   onCreatePost,
   rows = 3,
+  className,
 }: PostComposerProps) => {
   const [content, setContent] = useState<string>();
 
@@ -37,7 +40,7 @@ export const PostComposer = ({
   };
 
   return (
-    <div className="flex items-start space-x-4">
+    <div className={clsx(className, 'flex items-start space-x-4')}>
       <div className="flex-shrink-0">
         <Avatar user={currentUser} />
       </div>

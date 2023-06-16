@@ -1,23 +1,21 @@
 import { DateTime } from 'luxon';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { QuoteIcon } from '../../icons/QuoteIcon';
-import { RepostIcon } from '../../icons/RepostIcon';
 import { IPost, PostType } from '../../interfaces/IPost';
 import { createPost, fetchPost } from '../../redux/features/posts';
 import { fetchUser, selectCurrentUser } from '../../redux/features/users';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { Avatar } from '../Avatar';
-import { Button } from '../Button';
-import { PostComposer } from '../PostComposer';
 import { PostOptions } from './PostOptions';
+import clsx from 'clsx';
 
 interface PostProps {
   post: IPost;
   hidePostOptions?: boolean;
+  className?: string;
 }
 
-export const Post = ({ post, hidePostOptions }: PostProps) => {
+export const Post = ({ post, hidePostOptions, className }: PostProps) => {
   const { userId, content, createdAt, type, postReferenceId } = post;
   const location = useLocation();
   const user = useAppSelector(fetchUser({ userId }));
@@ -73,7 +71,7 @@ export const Post = ({ post, hidePostOptions }: PostProps) => {
   );
 
   return (
-    <div className="py-4">
+    <div className={clsx(className, 'py-4')}>
       <div className="flex space-x-3">
         <Avatar user={user} />
         <div className="flex-1">
