@@ -1,13 +1,13 @@
+import clsx from 'clsx';
 import { DateTime } from 'luxon';
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { IPost, PostType } from '../../interfaces/IPost';
 import { createPost, fetchPost } from '../../redux/features/posts';
 import { fetchUser, selectCurrentUser } from '../../redux/features/users';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { Avatar } from '../Avatar';
 import { PostOptions } from './PostOptions';
-import clsx from 'clsx';
 
 interface PostProps {
   post: IPost;
@@ -17,7 +17,6 @@ interface PostProps {
 
 export const Post = ({ post, hidePostOptions, className }: PostProps) => {
   const { userId, content, createdAt, type, postReferenceId } = post;
-  const location = useLocation();
   const user = useAppSelector(fetchUser({ userId }));
   const currentUser = useAppSelector(selectCurrentUser);
   const repostContent = useAppSelector(
@@ -53,7 +52,7 @@ export const Post = ({ post, hidePostOptions, className }: PostProps) => {
   const renderRepost = () => {
     if (type === PostType.POST || !repostContent) return null;
     return (
-      <div className="ring-1 ring-white px-4 rounded-sm m-4">
+      <div className="ring-1 ring-slate-500 px-4 rounded-sm sm:m-4 mt-2">
         <Post post={repostContent} hidePostOptions />
       </div>
     );
@@ -76,10 +75,7 @@ export const Post = ({ post, hidePostOptions, className }: PostProps) => {
         <Avatar user={user} />
         <div className="flex-1">
           <div className="flex items-center justify-between">
-            <Link
-              to={`/users/${user.userName}`}
-              state={{ backgroundLocation: location }}
-            >
+            <Link to={`/users/${user.userName}`}>
               <h3 className="text-sm font-bold">{`${user.firstName} ${user.lastName}`}</h3>
             </Link>
             <p className="text-sm text-white">

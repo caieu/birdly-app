@@ -5,6 +5,7 @@
   "dependencies": {
     "@faker-js/faker": "^7.4.0",
     "@headlessui/react": "^1.6.6",
+    "@heroicons/react": "^2.0.18",
     "@reduxjs/toolkit": "^1.8.5",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
@@ -15,6 +16,7 @@
     "@types/react-dom": "^18.0.6",
     "classnames": "^2.3.1",
     "clsx": "^1.2.1",
+    "concurrently": "^8.2.0",
     "luxon": "^3.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -31,7 +33,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "concurrently -s --kill-others-on-fail yarn:lint:*",
+    "lint:eslint": "eslint --ext .js,.ts,.tsx src",
+    "lint:ts": "tsc --noemit --pretty -p tsconfig.lint.json",
+    "lint:css": "stylelint src/**/*.css",
+    "format": "prettier --config .prettierrc --cache --write src/**/*.{ts,tsx} "
   },
   "eslintConfig": {
     "extends": [
@@ -57,6 +64,9 @@
     "@types/redux-persist": "^4.3.1",
     "autoprefixer": "^10.4.8",
     "postcss": "^8.4.16",
+    "prettier": "^2.8.8",
+    "stylelint": "^15.7.0",
+    "stylelint-config-standard": "^33.0.0",
     "tailwind-scrollbar": "^3.0.4",
     "tailwindcss": "^3.1.8"
   }

@@ -1,18 +1,23 @@
 import { ReactNode } from 'react';
 import { NavBar } from '../NavBar';
+import clsx from 'clsx';
 
 interface PageContainerProps {
   children: ReactNode;
+  fullWidth?: boolean;
 }
 
-export const PageContainer = ({ children }: PageContainerProps) => (
-  <div className="flex h-full">
+export const PageContainer = ({ children, fullWidth }: PageContainerProps) => (
+  <div className="flex flex-col h-full">
     <NavBar />
-    <div className="mx-auto px-4 sm:px-6 lg:px-8 bg-gray-900 flex-1">
-      <div className="max-w-3xl mx-auto h-full">
-        <div className="shadow overflow-hidden sm:rounded-md h-full">
-          {children}
-        </div>
+    <div className="flex flex-col mx-auto bg-gray-900 flex-1 w-full">
+      <div
+        className={clsx(
+          'mx-auto w-full h-full flex-1',
+          !fullWidth && 'sm:max-w-3xl',
+        )}
+      >
+        {children}
       </div>
     </div>
   </div>

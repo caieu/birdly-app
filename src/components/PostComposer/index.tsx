@@ -46,7 +46,7 @@ export const PostComposer = ({
       </div>
       <div className="min-w-0 flex-1">
         <form action="#" className="relative">
-          <div className="border border-gray-300 rounded-lg shadow-sm overflow-hidden focus-within:border-orange-500 focus-within:ring-1 focus-within:ring-orange-500">
+          <div className="border border-slate-500 rounded-lg shadow-sm overflow-hidden focus-within:border-orange-500 focus-within:ring-1 focus-within:ring-orange-500">
             <label htmlFor="content" className="sr-only">
               Add your content
             </label>

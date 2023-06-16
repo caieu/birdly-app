@@ -24,7 +24,7 @@ export const HomePage = () => {
 
   return (
     <PageContainer>
-      <Feed posts={posts} showPostComposer />
+      <Feed posts={posts} showPostComposer listClassName="px-4" />
     </PageContainer>
   );
 };

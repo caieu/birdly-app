@@ -8,7 +8,6 @@ import { useAppDispatch, useAppSelector } from './redux/hooks';
 
 function App() {
   const location = useLocation();
-  const state = location.state as { backgroundLocation?: Location };
   const dispatch = useAppDispatch();
   const users = useAppSelector(fetchUsers);
 
@@ -24,16 +23,10 @@ function App() {
 
   return (
     <div className="bg-gray-900 h-screen">
-      <Routes location={state?.backgroundLocation || location}>
-        <Route path="/" element={<HomePage />}>
-          <Route path="/users/:userName" element={<UserPage />}></Route>
-        </Route>
+      <Routes location={location}>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/users/:userName" element={<UserPage />} />
       </Routes>
-      {state?.backgroundLocation && (
-        <Routes>
-          <Route path="/users/:userName" element={<UserPage />} />
-        </Routes>
-      )}
     </div>
   );
 }
