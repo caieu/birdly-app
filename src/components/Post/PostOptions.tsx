@@ -3,6 +3,7 @@ import { RepostIcon } from '../../icons/RepostIcon';
 import { PostType } from '../../interfaces/IPost';
 import { Button } from '../Button';
 import { PostComposer } from '../PostComposer';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface PostOptionsProps {
   show?: boolean;
@@ -39,16 +40,22 @@ export const PostOptions = ({
           isSelected={showQuoteInput}
         />
       </div>
-      {showQuoteInput && (
-        <div className="pt-4 pb-2">
-          <PostComposer
-            type={PostType.QUOTE}
-            postReferenceId={postReferenceId}
-            onCreatePost={onCreatePost}
-            rows={1}
-          />
-        </div>
-      )}
+      <AnimatePresence>
+        {showQuoteInput && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 100, opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+          >
+            <PostComposer
+              type={PostType.QUOTE}
+              postReferenceId={postReferenceId}
+              onCreatePost={onCreatePost}
+              rows={1}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
