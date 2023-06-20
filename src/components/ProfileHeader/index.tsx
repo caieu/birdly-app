@@ -64,6 +64,7 @@ export const ProfileHeader = ({
             <div className="mt-6 sm:flex-1 sm:min-w-0 sm:flex sm:items-center sm:justify-end sm:space-x-6 sm:pb-1">
               <div className="mt-6 flex flex-col justify-stretch space-y-3 sm:flex-row sm:space-y-0 sm:space-x-4">
                 <Button
+                  className="justify-center"
                   label={isFollowing ? 'Unfollow' : 'Follow'}
                   onClick={onFollow}
                 />

@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { ReactNode } from 'react';
 
 interface ButtonProps {
@@ -7,6 +7,7 @@ interface ButtonProps {
   onClick?: () => void;
   transparent?: boolean;
   isSelected?: boolean;
+  className?: string;
 }
 
 export const Button = ({
@@ -15,15 +16,17 @@ export const Button = ({
   onClick,
   transparent,
   isSelected,
+  className,
 }: ButtonProps) => {
   return (
     <button
       onClick={onClick}
       type="button"
-      className={classNames(
+      className={clsx(
+        className,
         'inline-flex items-center border border-transparent text-sm font-medium rounded-md shadow-sm text-white outline-none',
         transparent
-          ? 'bg-transparent hover:text-orange-400 pt-2'
+          ? 'bg-transparent hover:text-orange-400'
           : 'bg-orange-600 hover:bg-orange-700 px-4 py-2',
         isSelected && 'text-orange-400',
       )}

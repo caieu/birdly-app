@@ -46,13 +46,13 @@ export const Post = ({ post, hidePostOptions, className }: PostProps) => {
 
   const renderPostContent = () => {
     if (!content) return null;
-    return <p className="text-sm pt-2">{content}</p>;
+    return <p className="text-sm">{content}</p>;
   };
 
   const renderRepost = () => {
     if (type === PostType.POST || !repostContent) return null;
     return (
-      <div className="ring-1 ring-slate-500 px-4 rounded-sm sm:m-4 mt-2">
+      <div className="ring-1 ring-slate-500 px-4 rounded-sm">
         <Post post={repostContent} hidePostOptions />
       </div>
     );
@@ -71,9 +71,9 @@ export const Post = ({ post, hidePostOptions, className }: PostProps) => {
 
   return (
     <div className={clsx(className, 'py-4')}>
-      <div className="flex space-x-3">
+      <div className="flex gap-x-3">
         <Avatar user={user} />
-        <div className="flex-1">
+        <div className="flex flex-col flex-1 gap-2">
           <div className="flex items-center justify-between">
             <Link to={`/users/${user.userName}`}>
               <h3 className="text-sm font-bold">{`${user.firstName} ${user.lastName}`}</h3>
