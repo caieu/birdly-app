@@ -2,12 +2,12 @@ import clsx from 'clsx';
 import { DateTime } from 'luxon';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { IPost, PostType } from '../../interfaces/IPost';
-import { createPost, fetchPost } from '../../redux/features/posts';
-import { fetchUser, selectCurrentUser } from '../../redux/features/users';
-import { useAppDispatch, useAppSelector } from '../../redux/hooks';
-import { Avatar } from '../Avatar';
-import { PostOptions } from './PostOptions';
+import { IPost, PostType } from '../interfaces/IPost';
+import { createPost, fetchPost } from '../redux/features/posts';
+import { fetchUser, selectCurrentUser } from '../redux/features/users';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
+import { Avatar } from './avatar';
+import { PostOptions } from './post-options';
 
 interface PostProps {
   post: IPost;

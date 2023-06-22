@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { NavBar } from '../NavBar';
+import { NavBar } from './nav-bar';
 import clsx from 'clsx';
 
 interface PageContainerProps {

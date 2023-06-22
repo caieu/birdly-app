@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import { HomePage } from './pages/HomePage';
-import { UserPage } from './pages/UserPage';
+import { HomePage } from './pages/home';
+import { UserPage } from './pages/user';
 import { initializePostsData } from './redux/features/posts';
 import { initializeUsersData, fetchUsers } from './redux/features/users';
 import { useAppDispatch, useAppSelector } from './redux/hooks';

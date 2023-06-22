@@ -1,8 +1,8 @@
-import { QuoteIcon } from '../../icons/QuoteIcon';
-import { RepostIcon } from '../../icons/RepostIcon';
-import { PostType } from '../../interfaces/IPost';
-import { Button } from '../Button';
-import { PostComposer } from '../PostComposer';
+import { QuoteIcon } from '../icons/QuoteIcon';
+import { RepostIcon } from '../icons/RepostIcon';
+import { PostType } from '../interfaces/IPost';
+import { Button } from './button';
+import { PostComposer } from './post-composer';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface PostOptionsProps {

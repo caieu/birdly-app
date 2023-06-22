@@ -1,12 +1,12 @@
-import { Avatar } from '../Avatar';
+import { Avatar } from './avatar';
 import { useState } from 'react';
-import { Button } from '../Button';
+import { Button } from './button';
 import { useSelector } from 'react-redux';
-import { selectCurrentUser } from '../../redux/features/users';
-import { useAppDispatch } from '../../redux/hooks';
-import { createPost } from '../../redux/features/posts';
-import { PostType } from '../../interfaces/IPost';
-import { TextArea } from '../TextArea';
+import { selectCurrentUser } from '../redux/features/users';
+import { useAppDispatch } from '../redux/hooks';
+import { createPost } from '../redux/features/posts';
+import { PostType } from '../interfaces/IPost';
+import { TextArea } from './text-area';
 import clsx from 'clsx';
 
 export const POST_CHARACTER_LIMIT = 777;

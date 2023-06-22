@@ -4,7 +4,7 @@ import { DateTime } from 'luxon';
 import { PostsState } from '.';
 import { IPost, PostType } from '../../../interfaces/IPost';
 import { IUser } from '../../../interfaces/IUser';
-import { generatePost } from '../../../mocks/Posts';
+import { generatePost } from '../../../mocks/posts';
 
 const INITIAL_POSTS_COUNT = 50;
 const DAILY_POST_LIMIT = 5;

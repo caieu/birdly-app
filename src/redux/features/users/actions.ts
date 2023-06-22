@@ -1,7 +1,7 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { UsersState } from '.';
 import { IUser } from '../../../interfaces/IUser';
-import { generateUser } from '../../../mocks/Users';
+import { generateUser } from '../../../mocks/users';
 
 const INITIAL_USER_COUNT = 30;
 

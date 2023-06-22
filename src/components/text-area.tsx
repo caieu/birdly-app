@@ -1,4 +1,4 @@
-import { POST_CHARACTER_LIMIT } from '../PostComposer';
+import { POST_CHARACTER_LIMIT } from './post-composer';
 
 interface TextAreaProps {
   content?: string;

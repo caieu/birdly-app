@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { Feed } from '../../components/Feed';
-import { PageContainer } from '../../components/PageContainer';
-import { IPostFilter } from '../../interfaces/IPostFilter';
-import { selectFilter, fetchPosts } from '../../redux/features/posts';
-import { selectCurrentUser } from '../../redux/features/users';
-import { useAppSelector } from '../../redux/hooks';
+import { Feed } from '../components/feed';
+import { PageContainer } from '../components/page-container';
+import { IPostFilter } from '../interfaces/IPostFilter';
+import { selectFilter, fetchPosts } from '../redux/features/posts';
+import { selectCurrentUser } from '../redux/features/users';
+import { useAppSelector } from '../redux/hooks';
 
 export const HomePage = () => {
   const [filter, setFilter] = useState<IPostFilter>();

@@ -1,10 +1,10 @@
 import { useParams } from 'react-router-dom';
-import { Feed } from '../../components/Feed';
-import { PageContainer } from '../../components/PageContainer';
-import { ProfileHeader } from '../../components/ProfileHeader';
-import { fetchPosts } from '../../redux/features/posts';
-import { fetchUser, selectCurrentUser } from '../../redux/features/users';
-import { useAppSelector } from '../../redux/hooks';
+import { Feed } from '../components/feed';
+import { PageContainer } from '../components/page-container';
+import { ProfileHeader } from '../components/profile-header';
+import { fetchPosts } from '../redux/features/posts';
+import { fetchUser, selectCurrentUser } from '../redux/features/users';
+import { useAppSelector } from '../redux/hooks';
 
 export const UserPage = () => {
   const { userName } = useParams();

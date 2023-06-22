@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { SearchIcon } from '../../icons/SearchIcon';
-import { setPostsFilter } from '../../redux/features/posts';
-import { useAppDispatch } from '../../redux/hooks';
+import { SearchIcon } from '../icons/SearchIcon';
+import { setPostsFilter } from '../redux/features/posts';
+import { useAppDispatch } from '../redux/hooks';
 
 export const SearchBar = () => {
   const [searchText, setSearchText] = useState<string>('');
