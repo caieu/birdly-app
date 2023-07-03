@@ -44,6 +44,19 @@ export const Post = ({ post, hidePostOptions, className }: PostProps) => {
     setShowQuoteInput(!showQuoteInput);
   };
 
+  const renderHeader = () => {
+    return (
+      <div className="flex items-center justify-between">
+        <Link to={`/users/${user.userName}`}>
+          <h3 className="text-sm font-bold">{`${user.firstName} ${user.lastName}`}</h3>
+        </Link>
+        <p className="text-sm text-white">
+          {DateTime.fromISO(createdAt).toLocaleString(DateTime.DATETIME_SHORT)}
+        </p>
+      </div>
+    );
+  };
+
   const renderPostContent = () => {
     if (!content) return null;
     return <p className="text-sm">{content}</p>;
@@ -74,16 +87,7 @@ export const Post = ({ post, hidePostOptions, className }: PostProps) => {
       <div className="flex gap-x-3">
         <Avatar user={user} />
         <div className="flex flex-col flex-1 gap-2">
-          <div className="flex items-center justify-between">
-            <Link to={`/users/${user.userName}`}>
-              <h3 className="text-sm font-bold">{`${user.firstName} ${user.lastName}`}</h3>
-            </Link>
-            <p className="text-sm text-white">
-              {DateTime.fromISO(createdAt).toLocaleString(
-                DateTime.DATETIME_SHORT,
-              )}
-            </p>
-          </div>
+          {renderHeader()}
           {renderPostContent()}
           {renderRepost()}
           {renderPostOptions()}
