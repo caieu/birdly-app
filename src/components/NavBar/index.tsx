@@ -18,7 +18,7 @@ export const NavBar = () => {
             className="flex-shrink-0 flex items-center cursor-pointer gap-2"
           >
             <PosterrIcon />
-            <div className="hidden sm:inline">Birdly</div>
+            <div className="hidden sm:inline font-bold">Birdly</div>
           </Link>
         </div>
         <div className="relative z-0 flex-1  flex items-center justify-center sm:absolute sm:inset-0">
