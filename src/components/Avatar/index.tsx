@@ -1,5 +1,5 @@
-import { IUser } from '../interfaces/IUser';
-import AvatarPlaceholder from '../assets/images/avatar-placeholder.jpeg';
+import { IUser } from '../../interfaces/IUser';
+import AvatarPlaceholder from '../../assets/images/avatar-placeholder.jpeg';
 import { Link, useLocation } from 'react-router-dom';
 
 interface AvatarProps {

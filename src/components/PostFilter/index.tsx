@@ -1,9 +1,9 @@
 import { Fragment, useEffect, useState } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 import { useSearchParams } from 'react-router-dom';
-import { useAppDispatch } from '../redux/hooks';
-import { setPostsFilter } from '../redux/features/posts';
-import { FilterUserType } from '../enums/FilterUserType';
+import { useAppDispatch } from '../../redux/hooks';
+import { setPostsFilter } from '../../redux/features/posts';
+import { FilterUserType } from '../../enums/FilterUserType';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 
 import clsx from 'clsx';

@@ -1,8 +1,8 @@
-import { Button } from './button';
+import { Button } from '../Button';
 import { DateTime } from 'luxon';
-import { useAppDispatch, useAppSelector } from '../redux/hooks';
-import { followUser, selectCurrentUser } from '../redux/features/users';
-import { IUser } from '../interfaces/IUser';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import { followUser, selectCurrentUser } from '../../redux/features/users';
+import { IUser } from '../../interfaces/IUser';
 
 interface ProfileHeaderProps {
   user: IUser;

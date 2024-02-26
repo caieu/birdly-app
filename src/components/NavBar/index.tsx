@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-import { PosterrIcon } from '../icons/PosterrIcon';
-import { selectCurrentUser } from '../redux/features/users';
-import { useAppSelector } from '../redux/hooks';
-import { Avatar } from './avatar';
-import { SearchBar } from './search-bar';
-import { PostsFilter } from './post-filter';
+import { PosterrIcon } from '../../icons/PosterrIcon';
+import { selectCurrentUser } from '../../redux/features/users';
+import { useAppSelector } from '../../redux/hooks';
+import { Avatar } from '../Avatar';
+import { SearchBar } from '../SearchBar';
+import { PostsFilter } from '../PostFilter';
 
 export const NavBar = () => {
   const currentUser = useAppSelector(selectCurrentUser);

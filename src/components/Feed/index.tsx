@@ -1,7 +1,7 @@
 import clsx from 'clsx';
-import { IPost } from '../interfaces/IPost';
-import { Post } from './post';
-import { PostComposer } from './post-composer';
+import { IPost } from '../../interfaces/IPost';
+import { Post } from '../Post';
+import { PostComposer } from '../PostComposer';
 import { Virtuoso } from 'react-virtuoso';
 
 interface FeedProps {

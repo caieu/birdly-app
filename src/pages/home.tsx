@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Feed } from '../components/feed';
-import { PageContainer } from '../components/page-container';
+import { Feed } from '../components/Feed';
+import { PageContainer } from '../components/PageContainer';
 import { IPostFilter } from '../interfaces/IPostFilter';
 import { selectFilter, fetchPosts } from '../redux/features/posts';
 import { selectCurrentUser } from '../redux/features/users';
